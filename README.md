@@ -25,5 +25,4 @@ Le sous-dossier "code/fonctions" contiendra les définitions de fonctions person
 
 ### Fonctions
 
-
 TODO

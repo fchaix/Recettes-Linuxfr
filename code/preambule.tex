@@ -1,0 +1,55 @@
+\documentclass[%
+	a4paper,
+	10pt,
+	linktocpage=true,
+	oneside,
+	DIV=calc, 
+	% DIV règle les proportions corps de texte-marges.
+	% Calc c’est pour qu’il calcule automatiquement la taille du corps du
+	% texte en fonction de la taille de la police utilisée.
+	]{scrreprt}
+% scrreprt est la classe qui remplace la classe « report » de LaTeX, avec la
+% suite KOMA-script. En gros c’est la même chose, mais avec des choses mieux
+% pour la typographie des langues européennes, la gestion du nombre de
+% caractères par ligne, etc.
+% Des explications ici : http://lesfichesabebert.fr/index.php/Koma/Koma-Script
+
+\usepackage[francais]{babel}
+\usepackage{fontspec}
+    \setmainfont[%
+	Numbers=OldStyle,
+	Ligatures={
+		TeX,
+		Common,
+		Rare,
+		Historical%
+		% Oui, je suis un petit peu vieux jeu…
+		}
+	]{Linux Libertine O}
+    \setsansfont{Linux Biolinum O}
+\KOMAoptions{DIV=last} 
+% La définition de DIV (Cf. options de \documentclass), dans le cas de calc,
+% doit se déclarer après la déclaration de la police.
+
+\usepackage[% Propriétés du PDF, et options des liens
+    hidelinks=true
+    colorlinks=false
+    pdfauthor={François Chaix},
+    pdftitle={Recettes de libristes — Da Boustifaille French Page},
+    pdfdisplaydoctitle=true, % Display document title instead of filename in title bar
+    pdfsubject={plop},
+    pdfkeywords={plop},
+    pdfproducer={LuaTeX, avec le package hyperref},
+    pdfcreator={LuaTex},
+    linktocpage=false,
+    pdfinfo={pouet ?},
+    pdflang={fr-FR},
+    unicode=true,
+    verbose=true
+    ]{hyperref}
+
+\usepackage{lipsum} % Temporaire, pour les tests
+
+\input{code/constantes}
+
+\input{code/fonctions/*} % Je ne sais pas si ça marche de mettre *
