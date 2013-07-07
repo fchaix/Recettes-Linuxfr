@@ -1,0 +1,14 @@
+% Cet environement est un environement de type liste. À utiliser comme suit :
+% \begin{ingredients}
+% \item truc
+% \end{ingredients}
+
+\newenvironment{ingredients}%
+{ \begin{list}%
+	{$\bullet$}% Cet argument permet de définir le symbole qui sera
+	%associé à chaque élément de la liste.
+	{% Mise en page de la liste
+		\setlength{\labelwidth}{30pt}%
+		\setlength{\leftmargin}{35pt}%
+		\setlength{\itemsep}{\parsep}}}%
+{ \end{list} }
